@@ -1,0 +1,38 @@
+h1
+{
+	color: white;
+}
+
+h2
+{
+	color: red;
+	text-align: center;
+}
+
+a
+{
+	color: yellow;
+	text-align: center;
+}
+
+body
+{
+	background-color: black;
+}
+
+#carte
+{
+	width: 800px;
+	margin:0 auto;
+	background-color: black;
+	text-align: center;
+	align-content: centre;
+}
+
+
+ul li
+{
+	list-style-type: none;
+	align-content: centre;
+	color: white;
+}
