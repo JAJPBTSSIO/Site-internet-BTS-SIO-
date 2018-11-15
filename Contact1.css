@@ -1,0 +1,33 @@
+h1
+{
+	color: white;
+}
+
+a
+{
+	color: red;
+	text-align: center;
+}
+
+body
+{
+	background-color: red;
+}
+
+#carte
+{
+	width: 800px;
+	Height: 800px;
+	margin:0 auto;
+	text-align: center;
+	align-content: centre;
+}
+
+#carte2
+{
+	width: 500px;
+	margin:0 auto;
+	background-color: white;
+	text-align: center;
+	align-content: centre;
+}
