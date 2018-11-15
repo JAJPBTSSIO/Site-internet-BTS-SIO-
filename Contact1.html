@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+	    <meta charset="utf-8">
+	    <title>www.SiteBTSSIO1.2.com</title>
+        <link rel="stylesheet" href="style_pageContact.css">
+	</head>
+	
+	<body>
+		<div id="carte">
+		
+		  <h1> PAGE CONTACT </h1>
+		  
+		<div id="carte2">  
+		  <p> <a href=IntroHtml.html>ACCUEIL</a> | <a href=IntroHtml_pageMenu.html>MENU</a> | <a href=IntroHtml_pageContact.html>CONTACT</a> </p>
+		</div id="carte2"> 
+	
+	     <p> FACEBOOK: <br> E-MAIL: <br> </p>
+	
+
+<?php
+// define variables and set to empty values
+$PrenomErr =$NomErr = $MailErr  = $MessageErr = "";
+$Prenom = $Nom = $Mail = $Message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["Prenom"])) {
+    $PrenomErr = "Prenom is required";
+  } else {
+    $Prenom = test_input($_POST["Prenom"]);
+	
+    // check if Prenom only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$Prenom)) {
+      $PrenomErr = "Only letters and white space allowed";
+    }
+  }
+  
+  if (empty($_POST["Nom"])) {
+    $NomErr = "Nom is required";
+  } else {
+    $Nom = test_input($_POST["Nom"]);
+  }
+}
+  if (empty($_POST["Mail"])) {
+    $MailErr = "Mail is required";
+  } else {
+    $Mail = test_input($_POST["Mail"]);
+    // check if Mail address is well-formed
+    if (!filter_var($Mail, FILTER_VALIDATE_EMAIL)) {
+      $MailErr = "Invalid Mail format";
+    }
+  }
+
+  if (empty($_POST["Message"])) {
+    $Message = "";
+  } else {
+    $Message = test_input($_POST["Message"]);
+  }
+
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+echo "<h2>Your Input:</h2>";
+echo $Prenom;
+echo "<br>";
+echo $Nom;
+echo "<br>";
+echo $Mail;
+echo "<br>";
+echo $Message;
+
+?>
+
+	
+	</body>	
+	</html>
